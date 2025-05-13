@@ -3732,6 +3732,19 @@ svg {
   padding: 5px !important;
 }
 
+
+/* 调整段落（p）的样式，确保有足够的空间 */
+p {
+  font-size: 19px;  /* 或其他你想要的大小 */
+  line-height: 1.9; /* 增加行间距 */
+}
+
+/* 如果你希望列表项也有相应的调整 */
+ul, ol {
+  font-size: 19px; /* 根据需要调整 */
+  line-height: 1.9; /* 行间距 */
+}
+
 .p-no {
   padding: 0 !important;
 }
