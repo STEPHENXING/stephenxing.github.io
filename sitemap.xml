@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://stephenxing.github.io/2025/05/13/try-audio/</loc>
+    <loc>https://stephenxing.github.io/2025/05/14/praise_your_name/</loc>
+    
+    <lastmod>2025-05-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stephenxing.github.io/2025/05/14/try-audio/</loc>
+    
+    <lastmod>2025-05-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stephenxing.github.io/categories/index.html</loc>
     
     <lastmod>2025-05-14</lastmod>
     
@@ -102,6 +120,13 @@
   
   <url>
     <loc>https://stephenxing.github.io/categories/%E7%81%B5%E4%BF%AE/</loc>
+    <lastmod>2025-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://stephenxing.github.io/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2025-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
