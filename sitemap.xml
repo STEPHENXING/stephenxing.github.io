@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xiaolianggg.sbs/2025/05/13/try-audio/</loc>
+    
+    <lastmod>2025-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiaolianggg.sbs/2025/05/15/so_love_the_world/</loc>
+    
+    <lastmod>2025-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiaolianggg.sbs/2025/05/14/praise_your_name/</loc>
+    
+    <lastmod>2025-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiaolianggg.sbs/2025/05/16/sing-halilu/</loc>
     
     <lastmod>2025-05-16</lastmod>
@@ -39,33 +66,6 @@
   
   <url>
     <loc>https://blog.xiaolianggg.sbs/2025/05/12/slan-before-foundation/</loc>
-    
-    <lastmod>2025-05-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiaolianggg.sbs/2025/05/15/so_love_the_world/</loc>
-    
-    <lastmod>2025-05-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiaolianggg.sbs/2025/05/14/praise_your_name/</loc>
-    
-    <lastmod>2025-05-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiaolianggg.sbs/2025/05/13/try-audio/</loc>
     
     <lastmod>2025-05-16</lastmod>
     
@@ -151,14 +151,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiaolianggg.sbs/categories/%E8%AE%B2%E9%81%93%E7%B2%BE%E5%8D%8E/</loc>
+    <loc>https://blog.xiaolianggg.sbs/categories/%E7%BB%8F%E5%85%B8%E6%95%AC%E6%8B%9C/</loc>
     <lastmod>2025-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xiaolianggg.sbs/categories/%E7%BB%8F%E5%85%B8%E6%95%AC%E6%8B%9C/</loc>
+    <loc>https://blog.xiaolianggg.sbs/categories/%E8%AE%B2%E9%81%93%E7%B2%BE%E5%8D%8E/</loc>
     <lastmod>2025-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
