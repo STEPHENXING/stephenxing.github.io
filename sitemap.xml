@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xiaolianggg.sbs/2025/05/16/sing-halilu/</loc>
+    
+    <lastmod>2025-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiaolianggg.sbs/2025/05/12/you-are-air-force/</loc>
     
     <lastmod>2025-05-16</lastmod>
@@ -120,6 +129,13 @@
   
   <url>
     <loc>https://blog.xiaolianggg.sbs/categories/%E7%81%B5%E4%BF%AE/</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiaolianggg.sbs/categories/%E7%BB%8F%E5%85%B8%E6%95%AC%E6%8B%9C/</loc>
     <lastmod>2025-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
