@@ -3,11 +3,11 @@
   <title>灵修</title>
   
   
-  <link href="https://stephenxing.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.xiaolianggg.sbs/atom.xml" rel="self"/>
   
-  <link href="https://stephenxing.github.io/"/>
+  <link href="https://blog.xiaolianggg.sbs/"/>
   <updated>2025-05-16T06:15:07.649Z</updated>
-  <id>https://stephenxing.github.io/</id>
+  <id>https://blog.xiaolianggg.sbs/</id>
   
   <author>
     <name>stephen xing</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>如此的爱</title>
-    <link href="https://stephenxing.github.io/2025/05/15/so_love_the_world/"/>
-    <id>https://stephenxing.github.io/2025/05/15/so_love_the_world/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/15/so_love_the_world/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/15/so_love_the_world/</id>
     <published>2025-05-15T10:18:37.000Z</published>
     <updated>2025-05-16T06:15:07.649Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-rmRpqaTy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-rmRpqaTy"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "如此的爱",              author: "ncc",              url: "https://r2.xiaolianggg.sbs/audio/so_love_the_world.MP3",              pic: "https://r2.xiaolianggg.sbs/2025/05/b61d6e611bdeeb393c6311068c090982.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://r2.xiaolianggg.sbs/2025/05/08ccf343316db53b6f41f645cf408efd.png" alt="image-20250515174739838"></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-dHQpacfy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-dHQpacfy"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "如此的爱",              author: "ncc",              url: "https://r2.xiaolianggg.sbs/audio/so_love_the_world.MP3",              pic: "https://r2.xiaolianggg.sbs/2025/05/b61d6e611bdeeb393c6311068c090982.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://r2.xiaolianggg.sbs/2025/05/08ccf343316db53b6f41f645cf408efd.png" alt="image-20250515174739838"></p>]]></content>
     
     
       
@@ -33,19 +33,19 @@
     
     
     
-    <category term="华文堂音乐" scheme="https://stephenxing.github.io/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/"/>
+    <category term="华文堂音乐" scheme="https://blog.xiaolianggg.sbs/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/"/>
     
     
   </entry>
   
   <entry>
     <title>我要歌颂你圣名</title>
-    <link href="https://stephenxing.github.io/2025/05/14/praise_your_name/"/>
-    <id>https://stephenxing.github.io/2025/05/14/praise_your_name/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/14/praise_your_name/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/14/praise_your_name/</id>
     <published>2025-05-14T08:47:37.000Z</published>
     <updated>2025-05-16T06:14:28.468Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-SPSRhhNJ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-SPSRhhNJ"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "我要歌颂你圣名",              author: "ncc",              url: "https://r2.xiaolianggg.sbs/audio/praise_your_holy_name.MP3",              pic: "https://r2.xiaolianggg.sbs/2025/05/b61d6e611bdeeb393c6311068c090982.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><strong>1:34&quot;</strong> 开始敬拜歌曲</p><h2 id="歌词">歌词</h2><blockquote><p>我要歌颂你圣名，哦主</p><p>歌颂你圣名，哦主，</p><p>因为你圣名至高，</p><p>配得赞美。</p><p>我要举手敬拜你，哦主</p><p>举手敬拜你，哦主，</p><p>因为你圣名至高，</p><p>配得赞美。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-ilfICXlX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-ilfICXlX"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "我要歌颂你圣名",              author: "ncc",              url: "https://r2.xiaolianggg.sbs/audio/praise_your_holy_name.MP3",              pic: "https://r2.xiaolianggg.sbs/2025/05/b61d6e611bdeeb393c6311068c090982.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><strong>1:34&quot;</strong> 开始敬拜歌曲</p><h2 id="歌词">歌词</h2><blockquote><p>我要歌颂你圣名，哦主</p><p>歌颂你圣名，哦主，</p><p>因为你圣名至高，</p><p>配得赞美。</p><p>我要举手敬拜你，哦主</p><p>举手敬拜你，哦主，</p><p>因为你圣名至高，</p><p>配得赞美。</p></blockquote>]]></content>
     
     
       
@@ -55,15 +55,15 @@
     
     
     
-    <category term="华文堂音乐" scheme="https://stephenxing.github.io/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/"/>
+    <category term="华文堂音乐" scheme="https://blog.xiaolianggg.sbs/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/"/>
     
     
   </entry>
   
   <entry>
     <title>把我的苦水倒给主</title>
-    <link href="https://stephenxing.github.io/2025/05/13/exchange-your-bitter-water-1/"/>
-    <id>https://stephenxing.github.io/2025/05/13/exchange-your-bitter-water-1/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/13/exchange-your-bitter-water-1/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/13/exchange-your-bitter-water-1/</id>
     <published>2025-05-13T05:57:50.000Z</published>
     <updated>2025-05-16T06:17:33.094Z</updated>
     
@@ -77,19 +77,19 @@
     
     
     
-    <category term="灵修" scheme="https://stephenxing.github.io/categories/%E7%81%B5%E4%BF%AE/"/>
+    <category term="灵修" scheme="https://blog.xiaolianggg.sbs/categories/%E7%81%B5%E4%BF%AE/"/>
     
     
   </entry>
   
   <entry>
     <title>主赐我平安</title>
-    <link href="https://stephenxing.github.io/2025/05/13/try-audio/"/>
-    <id>https://stephenxing.github.io/2025/05/13/try-audio/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/13/try-audio/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/13/try-audio/</id>
     <published>2025-05-12T22:47:37.000Z</published>
     <updated>2025-05-16T06:14:05.429Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-LSjVjrPs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-LSjVjrPs"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "主赐我平安",              author: "ncc",              url: "https://r2.xiaolianggg.sbs/audio/lord_give_peace.MP3",              pic: "https://r2.xiaolianggg.sbs/2025/05/b61d6e611bdeeb393c6311068c090982.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="歌词">歌词</h2><blockquote><p>主赐我平安，主赐我平安</p><p>因为耶稣深爱我，赐我平安</p><p>我的心有平安，我的心有平安</p><p>因为耶稣深爱我，赐我平安</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-JTobUREi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-JTobUREi"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "主赐我平安",              author: "ncc",              url: "https://r2.xiaolianggg.sbs/audio/lord_give_peace.MP3",              pic: "https://r2.xiaolianggg.sbs/2025/05/b61d6e611bdeeb393c6311068c090982.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="歌词">歌词</h2><blockquote><p>主赐我平安，主赐我平安</p><p>因为耶稣深爱我，赐我平安</p><p>我的心有平安，我的心有平安</p><p>因为耶稣深爱我，赐我平安</p></blockquote>]]></content>
     
     
       
@@ -99,15 +99,15 @@
     
     
     
-    <category term="华文堂音乐" scheme="https://stephenxing.github.io/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/"/>
+    <category term="华文堂音乐" scheme="https://blog.xiaolianggg.sbs/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/"/>
     
     
   </entry>
   
   <entry>
     <title>别忘了你有一支空军</title>
-    <link href="https://stephenxing.github.io/2025/05/12/you-are-air-force/"/>
-    <id>https://stephenxing.github.io/2025/05/12/you-are-air-force/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/12/you-are-air-force/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/12/you-are-air-force/</id>
     <published>2025-05-12T08:40:08.000Z</published>
     <updated>2025-05-14T06:50:46.227Z</updated>
     
@@ -121,15 +121,15 @@
     
     
     
-    <category term="灵修" scheme="https://stephenxing.github.io/categories/%E7%81%B5%E4%BF%AE/"/>
+    <category term="灵修" scheme="https://blog.xiaolianggg.sbs/categories/%E7%81%B5%E4%BF%AE/"/>
     
     
   </entry>
   
   <entry>
     <title>创世之前被杀的羔羊</title>
-    <link href="https://stephenxing.github.io/2025/05/12/slan-before-foundation/"/>
-    <id>https://stephenxing.github.io/2025/05/12/slan-before-foundation/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/12/slan-before-foundation/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/12/slan-before-foundation/</id>
     <published>2025-05-12T05:54:01.000Z</published>
     <updated>2025-05-16T06:16:22.213Z</updated>
     
@@ -143,15 +143,37 @@
     
     
     
-    <category term="灵修" scheme="https://stephenxing.github.io/categories/%E7%81%B5%E4%BF%AE/"/>
+    <category term="灵修" scheme="https://blog.xiaolianggg.sbs/categories/%E7%81%B5%E4%BF%AE/"/>
     
     
   </entry>
   
   <entry>
+    <title>新的母亲项目，用来写东西的</title>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/12/mother-proj/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/12/mother-proj/</id>
+    <published>2025-05-11T21:48:29.000Z</published>
+    <updated>2025-05-12T08:29:59.779Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>一级标题</h1><h2 id="二级标题">二级标题</h2><p>怎样写出来更优美。</p><p><img src="mother-proj/image-20250512154950648.png" alt="image-20250512154950648"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="new_tag" scheme="https://blog.xiaolianggg.sbs/tags/new-tag/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="https://stephenxing.github.io/2025/05/12/hello-world/"/>
-    <id>https://stephenxing.github.io/2025/05/12/hello-world/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/12/hello-world/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/12/hello-world/</id>
     <published>2025-05-11T21:48:29.000Z</published>
     <updated>2025-05-12T08:00:32.990Z</updated>
     
@@ -169,31 +191,9 @@
   </entry>
   
   <entry>
-    <title>新的母亲项目，用来写东西的</title>
-    <link href="https://stephenxing.github.io/2025/05/12/mother-proj/"/>
-    <id>https://stephenxing.github.io/2025/05/12/mother-proj/</id>
-    <published>2025-05-11T21:48:29.000Z</published>
-    <updated>2025-05-12T08:29:59.779Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>一级标题</h1><h2 id="二级标题">二级标题</h2><p>怎样写出来更优美。</p><p><img src="mother-proj/image-20250512154950648.png" alt="image-20250512154950648"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    
-    <category term="new_tag" scheme="https://stephenxing.github.io/tags/new-tag/"/>
-    
-  </entry>
-  
-  <entry>
     <title>约旦河的  可以空格的标题</title>
-    <link href="https://stephenxing.github.io/2025/05/09/jodan-with-pages/"/>
-    <id>https://stephenxing.github.io/2025/05/09/jodan-with-pages/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/09/jodan-with-pages/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/09/jodan-with-pages/</id>
     <published>2025-05-09T11:25:38.000Z</published>
     <updated>2025-05-16T06:13:17.506Z</updated>
     
@@ -212,8 +212,8 @@
   
   <entry>
     <title>new page</title>
-    <link href="https://stephenxing.github.io/2025/05/09/new-page/"/>
-    <id>https://stephenxing.github.io/2025/05/09/new-page/</id>
+    <link href="https://blog.xiaolianggg.sbs/2025/05/09/new-page/"/>
+    <id>https://blog.xiaolianggg.sbs/2025/05/09/new-page/</id>
     <published>2025-05-09T10:01:36.000Z</published>
     <updated>2025-05-12T07:46:25.779Z</updated>
     
