@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>function call 举个例子 | Xiaoliang</title>
+  <meta name="description" content="使用 Function Calling 的提示词模板与 OpenAI 示例详解 一、Function Calling 简介 Function Calling 是指大模型在理解用户意图后，自动调用一个或多个预定义的函数，并传入合适的参数。这使得模型不再是“只输出文本”，而是能与外部系统联动，执行真实操作。 例如：  用户问：“北京明天天气怎么样？” 模型识别出需要调用 get_weather 函数，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="function call 举个例子">
+<meta property="og:url" content="https://blog.xiaolianggg.sbs/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/index.html">
+<meta property="og:site_name" content="灵修">
+<meta property="og:description" content="使用 Function Calling 的提示词模板与 OpenAI 示例详解 一、Function Calling 简介 Function Calling 是指大模型在理解用户意图后，自动调用一个或多个预定义的函数，并传入合适的参数。这使得模型不再是“只输出文本”，而是能与外部系统联动，执行真实操作。 例如：  用户问：“北京明天天气怎么样？” 模型识别出需要调用 get_weather 函数，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-13T07:35:00.000Z">
+<meta property="article:modified_time" content="2025-06-13T07:35:33.561Z">
+<meta property="article:author" content="stephen xing">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://blog.xiaolianggg.sbs/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="灵修" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<!-- hexo injector head_end start --><script src="https://cdn.jsdelivr.net/gh/BP-Devteam/sitescansense/s3module.min.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body class="main-center theme-green" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://blog.xiaolianggg.sbs" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">xiaoliang</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">跟随主</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 深圳, 广东</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://blog.xiaolianggg.sbs" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>竭力跟随!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%8E%E6%96%87%E5%A0%82%E9%9F%B3%E4%B9%90/">华文堂音乐</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%A4%A7%E6%A8%A1%E5%9E%8B/">技术之大模型</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%81%B5%E4%BF%AE/">灵修</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E6%95%AC%E6%8B%9C/">经典敬拜</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B2%E9%81%93%E7%B2%BE%E5%8D%8E/">讲道精华</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%81%B5%E4%BF%AE/">灵修</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/08/05/shunzheling/" class="title">顺着灵而行</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-08-05T08:56:56.000Z" itemprop="datePublished">2025-08-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/" class="title">function call 举个例子</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-06-13T07:35:00.000Z" itemprop="datePublished">2025-06-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/06/13/MCP-%E5%88%9D%E6%AD%A5/" class="title">MCP 初步</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-06-13T07:11:34.000Z" itemprop="datePublished">2025-06-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/06/13/MCP-vs-function-call/" class="title">Function Call 深入解析笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-06-13T02:37:14.000Z" itemprop="datePublished">2025-06-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%A4%A7%E6%A8%A1%E5%9E%8B/">技术之大模型</a>
+              </p>
+              <p class="item-title">
+                <a href="/2025/05/30/fine-tune-llm-by-wuenda/" class="title">fine_tune_llm_by_wuenda</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2025-05-30T06:57:13.000Z" itemprop="datePublished">2025-05-30</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/new-tag/" rel="tag">new_tag</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/new-tag/" style="font-size: 13px;">new_tag</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 14px;">技术</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">六月 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a><span class="archive-list-count">16</span></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-function-call-举个例子" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      function call 举个例子
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/" class="article-date">
+	  <time datetime="2025-06-13T07:35:00.000Z" itemprop="datePublished">2025-06-13</time>
+	</a>
+</span>
+        
+        
+
+        <!-- <div>hello true </div> -->
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
+	
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1>使用 Function Calling 的提示词模板与 OpenAI 示例详解</h1>
+<h2 id="一、Function-Calling-简介">一、Function Calling 简介</h2>
+<p><strong>Function Calling</strong> 是指大模型在理解用户意图后，自动调用一个或多个预定义的函数，并传入合适的参数。这使得模型不再是“只输出文本”，而是能与外部系统联动，执行真实操作。</p>
+<p>例如：</p>
+<ul>
+<li>用户问：“北京明天天气怎么样？”</li>
+<li>模型识别出需要调用 <code>get_weather</code> 函数，并传入 <code>city=&quot;北京&quot;</code> 和 <code>date=&quot;明天&quot;</code></li>
+</ul>
+<hr>
+<h2 id="二、提示词模板的作用">二、提示词模板的作用</h2>
+<blockquote>
+<p><strong>提示词模板是 Function Calling 的基础配置文件。</strong></p>
+</blockquote>
+<p>它告诉模型：</p>
+<ul>
+<li>它扮演的角色（Role）</li>
+<li>可用的工具（Tools）</li>
+<li>调用规则（Calling Rules）</li>
+<li>输出格式（Response Format）</li>
+</ul>
+<h3 id="✅-作用总结：">✅ 作用总结：</h3>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role</td>
+<td>明确职责边界（如“你是一个天气助手”）</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>告知可用函数及其参数</td>
+</tr>
+<tr>
+<td>Rules</td>
+<td>控制何时调用函数</td>
+</tr>
+<tr>
+<td>Output Format</td>
+<td>控制返回结果形式</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="三、使用-OpenAI-实现-Function-Calling-的-Python-示例">三、使用 OpenAI 实现 Function Calling 的 Python 示例</h2>
+<p>以下是一个完整的示例，展示如何构造提示词模板 + 定义函数 schema + 调用 OpenAI API 并处理响应。</p>
+<h3 id="📦-步骤概览：">📦 步骤概览：</h3>
+<ol>
+<li>构造完整的 Prompt（含角色、工具、调用规则）</li>
+<li>定义 <code>get_weather</code> 函数的 Schema</li>
+<li>发起请求并解析是否调用了函数</li>
+<li>如果调用成功，模拟执行函数并返回结果</li>
+</ol>
+<hr>
+<h3 id="💻-完整代码示例（Python-OpenAI）">💻 完整代码示例（Python + OpenAI）</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openai</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 OpenAI API Key</span></span><br><span class="line">openai.api_key = <span class="string">&quot;YOUR_OPENAI_API_KEY&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 模拟的天气查询函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_weather</span>(<span class="params">city: <span class="built_in">str</span>, date: <span class="built_in">str</span> = <span class="string">&quot;明天&quot;</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    weather_data = &#123;</span><br><span class="line">        <span class="string">&quot;北京&quot;</span>: &#123;<span class="string">&quot;今天&quot;</span>: <span class="string">&quot;22℃，多云&quot;</span>, <span class="string">&quot;明天&quot;</span>: <span class="string">&quot;23℃，晴&quot;</span>&#125;,</span><br><span class="line">        <span class="string">&quot;上海&quot;</span>: &#123;<span class="string">&quot;今天&quot;</span>: <span class="string">&quot;28℃，小雨&quot;</span>, <span class="string">&quot;明天&quot;</span>: <span class="string">&quot;29℃，阴&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;city&#125;</span><span class="subst">&#123;date&#125;</span>天气：<span class="subst">&#123;weather_data.get(city, &#123;&#125;</span>).get(date, &#x27;无数据&#x27;)&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造提示词模板</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">build_prompt</span>(<span class="params">user_query</span>):</span><br><span class="line">    template = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"># 角色  </span></span><br><span class="line"><span class="string">你是天气助手，仅回答与天气相关的问题。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 可用工具  </span></span><br><span class="line"><span class="string">- **get_weather**:  </span></span><br><span class="line"><span class="string">  - 描述: 查询城市天气预报。  </span></span><br><span class="line"><span class="string">  - 参数:  </span></span><br><span class="line"><span class="string">    - `city` (字符串，必需): 用户指定的城市，如“上海”。  </span></span><br><span class="line"><span class="string">    - `date` (字符串，可选): 日期（格式：今天/明天/YYYY-MM-DD），默认明天。  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 调用规则  </span></span><br><span class="line"><span class="string">1. 仅当用户明确询问天气时调用工具。  </span></span><br><span class="line"><span class="string">2. 若用户未说明城市，回复：“请问您想查询哪个城市？”  </span></span><br><span class="line"><span class="string">3. 工具返回结果后，整理为自然语言回复（如“上海明天25℃，晴”）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">【用户输入】</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> template.strip() + <span class="string">&quot;\n&quot;</span> + user_query.strip()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义函数 Schema（OpenAI 所需的 JSON 格式）</span></span><br><span class="line">tool_schema = &#123;</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;function&quot;</span>,</span><br><span class="line">    <span class="string">&quot;function&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;get_weather&quot;</span>,</span><br><span class="line">        <span class="string">&quot;description&quot;</span>: <span class="string">&quot;查询城市天气预报。&quot;</span>,</span><br><span class="line">        <span class="string">&quot;parameters&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;object&quot;</span>,</span><br><span class="line">            <span class="string">&quot;properties&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;city&quot;</span>: &#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;string&quot;</span>, <span class="string">&quot;description&quot;</span>: <span class="string">&quot;要查询的城市名称&quot;</span>&#125;,</span><br><span class="line">                <span class="string">&quot;date&quot;</span>: &#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;string&quot;</span>, <span class="string">&quot;description&quot;</span>: <span class="string">&quot;查询日期，默认明天&quot;</span>&#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;required&quot;</span>: [<span class="string">&quot;city&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 OpenAI 并处理响应</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">call_openai_with_function</span>(<span class="params">prompt</span>):</span><br><span class="line">    response = openai.ChatCompletion.create(</span><br><span class="line">        model=<span class="string">&quot;gpt-3.5-turbo-1106&quot;</span>,</span><br><span class="line">        messages=[&#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: prompt&#125;],</span><br><span class="line">        functions=[tool_schema],</span><br><span class="line">        function_call=<span class="string">&quot;auto&quot;</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    message = response.choices[<span class="number">0</span>].message</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">hasattr</span>(message, <span class="string">&#x27;function_call&#x27;</span>):</span><br><span class="line">        <span class="comment"># 解析调用的函数和参数</span></span><br><span class="line">        func_name = message.function_call.name</span><br><span class="line">        args = <span class="built_in">eval</span>(message.function_call.arguments)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;调用函数：&quot;</span>, func_name)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;参数：&quot;</span>, args)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 模拟调用函数</span></span><br><span class="line">        result = get_weather(**args)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 直接返回模型的回答</span></span><br><span class="line">        <span class="keyword">return</span> message.content</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主流程测试</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    user_input = <span class="string">&quot;北京天气怎么样？&quot;</span></span><br><span class="line">    prompt = build_prompt(user_input)</span><br><span class="line">    response = call_openai_with_function(prompt)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;最终回复：&quot;</span>, response)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="四、运行结果示例">四、运行结果示例</h2>
+<p>假设用户输入为：</p>
+<p>深色版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">北京天气怎么样？</span><br></pre></td></tr></table></figure>
+<p>程序输出可能如下：</p>
+<p>深色版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">调用函数： get_weather</span><br><span class="line">参数： &#123;&#x27;city&#x27;: &#x27;北京&#x27;, &#x27;date&#x27;: &#x27;明天&#x27;&#125;</span><br><span class="line">最终回复： 北京明天天气：23℃，晴</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="五、总结">五、总结</h2>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 提示词模板</td>
+<td>是 Function Calling 的核心，决定了模型的行为逻辑</td>
+</tr>
+<tr>
+<td>✅ Function Calling 流程</td>
+<td>包括构建 prompt、定义 schema、调用 API、解析 tool_call</td>
+</tr>
+<tr>
+<td>✅ OpenAI 支持</td>
+<td>通过 <code>functions</code> 和 <code>function_call</code> 字段实现</td>
+</tr>
+<tr>
+<td>✅ 本地调试函数</td>
+<td>可模拟真实接口行为，便于开发测试</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+<div class="article-footer">
+      <!-- <blockquote class="mt-2x"> -->
+<!--   <ul class="post-copyright list-unstyled"> -->
+<!--      -->
+<!--     <li class="post-copyright-link hidden-xs"> -->
+<!--       <strong>本文链接：</strong> -->
+<!--       <a href="https://blog.xiaolianggg.sbs/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/" title="function call 举个例子" target="_blank" rel="external">https://blog.xiaolianggg.sbs/2025/06/13/function-call-举个例子/</a> -->
+<!--     </li> -->
+<!--      -->
+<!--     <li class="post-copyright-license"> -->
+<!--       <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！ -->
+<!--     </li> -->
+<!--   </ul> -->
+<!-- </blockquote> -->
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://blog.xiaolianggg.sbs" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://blog.xiaolianggg.sbs" target="_blank"><span class="text-dark">xiaoliang</span><small class="ml-1x">跟随主</small></a></h3>
+        <div>竭力的进入安息。喜欢赞美和敬拜，喜欢在经文中看到主耶稣，有志同道合的朋友可以加微信私聊：xingxiliang。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2025/08/05/shunzheling/" title="顺着灵而行"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2025/06/13/MCP-%E5%88%9D%E6%AD%A5/" title="MCP 初步"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://blog.xiaolianggg.sbs" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+    <script defer>
+    var disqus_config = function () {
+        
+            this.page.url = 'https://blog.xiaolianggg.sbs/2025/06/13/function-call-%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90/';
+        
+        this.page.identifier = 'function-call-举个例子';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + '' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
